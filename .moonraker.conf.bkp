@@ -1,7 +1,7 @@
 [server]
 host = 0.0.0.0
 port = 7125
-klippy_uds_address = /home/biqu/printer_data/comms/klippy.sock
+klippy_uds_address = /home/patrez/printer_data/comms/klippy.sock
 
 [authorization]
 trusted_clients = 
@@ -85,9 +85,9 @@ primary_branch = main
 [update_manager octoeverywhere]
 type = git_repo
 channel = beta
-path = /home/biqu/octoeverywhere
+path = /home/patrez/octoeverywhere
 origin = https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere.git
-env = /home/biqu/octoeverywhere-env/bin/python
+env = /home/patrez/octoeverywhere-env/bin/python
 requirements = requirements.txt
 install_script = install.sh
 managed_services = 
@@ -105,7 +105,7 @@ primary_branch = main
 managed_services = mobileraker
 env = ~/mobileraker-env/bin/python
 requirements = scripts/mobileraker-requirements.txt
-install_script = scripts/install-mobileraker-companion.sh
+install_script = scripts/install.sh
 
 [update_manager klipper_tmc_autotune]
 type = git_repo
@@ -131,4 +131,12 @@ origin = https://github.com/Frix-x/klippain-shaketune.git
 primary_branch = main
 managed_services = klipper
 install_script = install.sh
+
+[update_manager z_v2settling_probe]
+type = git_repo
+path = ~/voron2_settling_probe
+origin = https://github.com/GadgetAngel/voron2_settling_probe.git
+install_script = install-v2settling_probe.sh
+is_system_service = False
+managed_services = klipper
 

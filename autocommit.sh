@@ -32,7 +32,7 @@ mainsail_folder=~/mainsail
 
 ### The branch of the repository that you want to save your config
 ### By default that is 'master'
-branch=dragonburner_v6_g2sa
+branch=dragonburner_nfcrazy_g2sa
 
 #####################################################################
 #####################################################################
