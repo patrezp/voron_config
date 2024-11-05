@@ -62,13 +62,6 @@ primary_branch = main
 managed_services = sonar
 install_script = tools/install.sh
 
-[update_manager timelapse]
-type = git_repo
-primary_branch = main
-path = ~/moonraker-timelapse
-origin = https://github.com/mainsail-crew/moonraker-timelapse.git
-managed_services = klipper moonraker
-
 [update_manager KlipperScreen]
 type = git_repo
 path = ~/KlipperScreen
@@ -167,4 +160,27 @@ persistent_files =
 	.venv
 	.env
 managed_services = Spoolman
+
+[update_manager timelapse]
+type = git_repo
+primary_branch = main
+path = ~/moonraker-timelapse
+origin = https://github.com/mainsail-crew/moonraker-timelapse.git
+managed_services = klipper moonraker
+
+[timelapse]
+output_path = ~/timelapse/
+frame_path = /tmp/timelapse/
+ffmpeg_binary_path = /usr/bin/ffmpeg
+
+[power homeassistant_switch]
+type = homeassistant
+address = 192.168.1.220
+port = 8123
+device = switch.printer_power_outlet
+token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJiYWFjOWM4NzdjNzU0M2IyYjU0MWNlNjNiYmUxYTU1YyIsImlhdCI6MTcyODIyMDE5NywiZXhwIjoyMDQzNTgwMTk3fQ.zgPAh5rRz9glCltH7i7ClNECPJZNj3EDW1IRSn9dnfk
+domain = switch
+on_when_job_queued = True
+restart_klipper_when_powered = True
+restart_delay = 3.
 
