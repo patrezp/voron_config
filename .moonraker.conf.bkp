@@ -141,6 +141,7 @@ type = git_repo
 path = ~/cartographer-klipper
 channel = dev
 origin = https://github.com/Cartographer3D/cartographer-klipper.git
+primary_branch = krautech-nightly
 env = ~/klippy-env/bin/python
 requirements = requirements.txt
 install_script = install.sh
