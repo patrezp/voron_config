@@ -136,20 +136,6 @@ path = ~/klipper-led_effect
 origin = https://github.com/julianschill/klipper-led_effect.git
 is_system_service = False
 
-[update_manager cartographer]
-type = git_repo
-path = ~/cartographer-klipper
-channel = dev
-origin = https://github.com/Cartographer3D/cartographer-klipper.git
-primary_branch = krautech-nightly
-env = ~/klippy-env/bin/python
-requirements = requirements.txt
-install_script = install.sh
-is_system_service = False
-managed_services = klipper
-info_tags = 
-	desc=Cartographer Probe
-
 [update_manager Spoolman]
 type = zip
 channel = stable
@@ -184,4 +170,12 @@ domain = switch
 on_when_job_queued = True
 restart_klipper_when_powered = True
 restart_delay = 3.
+
+[update_manager ToolChanger]
+type = git_repo
+path = ~/klipper-toolchanger
+origin = https://github.com/DraftShift/klipper-toolchanger.git
+primary_branch = develop
+is_system_service = True
+managed_services = ToolChanger
 
