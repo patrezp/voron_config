@@ -28,7 +28,7 @@ cors_domains =
 enable_object_processing = True
 
 [spoolman]
-server = http://192.168.1.223:7912
+server = http://192.168.1.111:7912
 sync_rate = 5
 
 [update_manager]
@@ -136,18 +136,6 @@ path = ~/klipper-led_effect
 origin = https://github.com/julianschill/klipper-led_effect.git
 is_system_service = False
 
-[update_manager Spoolman]
-type = zip
-channel = stable
-repo = Donkie/Spoolman
-path = ~/Spoolman
-virtualenv = .venv
-requirements = requirements.txt
-persistent_files = 
-	.venv
-	.env
-managed_services = Spoolman
-
 [update_manager timelapse]
 type = git_repo
 primary_branch = main
@@ -178,4 +166,12 @@ origin = https://github.com/DraftShift/klipper-toolchanger.git
 primary_branch = develop
 is_system_service = True
 managed_services = ToolChanger
+
+[update_manager axiscope]
+type = git_repo
+path = /home/patrez/axiscope
+origin = https://github.com/nic335/Axiscope.git
+primary_branch = main
+is_system_service = True
+managed_services = axiscope
 
