@@ -136,14 +136,18 @@ path = ~/klipper-led_effect
 origin = https://github.com/julianschill/klipper-led_effect.git
 is_system_service = False
 
-[update_manager cartographer_plugin]
-type = python
-channel = stable
-virtualenv = ~/klippy-env
-project_name = cartographer3d-plugin
+[update_manager beacon]
+type = git_repo
+channel = dev
+path = ~/beacon_klipper
+origin = https://github.com/beacon3d/beacon_klipper.git
+env = ~/klippy-env/bin/python
+requirements = requirements.txt
+install_script = install.sh
 is_system_service = False
 managed_services = klipper
-info_tags = desc=Cartographer Plugin
+info_tags = 
+	desc=Beacon Surface Scanner
 
 [update_manager timelapse]
 type = git_repo
@@ -171,8 +175,8 @@ restart_delay = 3.
 [update_manager ToolChanger]
 type = git_repo
 path = ~/klipper-toolchanger
-origin = https://github.com/DraftShift/klipper-toolchanger.git
-primary_branch = develop
+origin = https://github.com/Contomo/klipper-toolchanger-hard.git
+primary_branch = main
 is_system_service = True
 managed_services = ToolChanger
 

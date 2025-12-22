@@ -32,7 +32,7 @@ mainsail_folder=~/mainsail
 
 ### The branch of the repository that you want to save your config
 ### By default that is 'master'
-branch=a4t_nfcrazy_g2sa_stealthchanger
+branch=stealthchanger_ktc_hard_cartographer
 
 #####################################################################
 #####################################################################
